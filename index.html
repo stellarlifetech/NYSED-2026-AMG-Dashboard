@@ -506,7 +506,7 @@ footer{padding:40px 0 60px;color:var(--muted);font-size:.85rem}
 <main>
 <section class="internal deckbar"><div class="wrap"><div class="card deckcard">
   <div><h3>Presentation for NYSED visits, accreditation, and conferences</h3>
-  <p class="small muted" style="margin:4px 0 0">A 23-slide PowerPoint built from the current data: native, editable charts; high-resolution images of the diagrams; speaker notes on every slide; animated NCLEX chart and diagrams that play and loop on their own; and, optionally, the soundscape video embedded. It uses reviewer-safe content only.</p></div>
+  <p class="small muted" style="margin:4px 0 0">A 24-slide PowerPoint built from the current data: native, editable charts; high-resolution images of the diagrams; speaker notes on every slide; animated NCLEX chart and diagrams that play and loop on their own; and, optionally, the soundscape video embedded. It uses reviewer-safe content only.</p></div>
   <div class="deckctl"><button class="chip primary" id="deckBtn">Download presentation (PowerPoint)</button>
   <label class="small toggle"><input type="checkbox" id="deckAnim" checked> Animate the NCLEX chart, diagrams, and the system dynamics and agent-based models, as on the web</label>
   <label class="small toggle"><input type="checkbox" id="deckVideo" checked> Include the soundscape video (H.264 MP4, plays in PowerPoint)</label></div>
@@ -630,7 +630,7 @@ footer{padding:40px 0 60px;color:var(--muted);font-size:.85rem}
     <p class="small muted" style="margin-top:10px">Used as evidence for Elements 8, 10, 11, 16, 18, and 19. Spring 2026 results were reported for support, resources, and overall satisfaction items only. The summer 2026 survey used a revised 15-item instrument, so each summer 2026 value is the most closely comparable item; library, facilities, and safety items were not included in summer 2026. Participation rose after survey QR codes were placed in Brightspace and completion incentives were offered.</p>
     <div class="two">
       <div class="card"><h3>Summer 2026 survey: all 15 items</h3><p class="small muted">n = 473 students across all courses; survey completed August 28, 2026. Every item met the 80% benchmark (mean 4.42 of 5).</p><div id="fallBars"></div></div>
-      <div class="card"><h3>Summer 2026 survey by course</h3><p class="small muted">Mean rating of all items by course, as listed in the report (Table G2). The table's response total (1,333) matches the End-of-Course Evaluation count rather than the 473 survey respondents, so the per-course counts are being verified.</p><div class="scroller"><table class="asmt" id="fallCourses"></table></div>
+      <div class="card"><h3>Summer 2026 survey by course</h3><p class="small muted">Mean rating of all items by course, as listed in the report (Table G2).</p><div class="scroller"><table class="asmt" id="fallCourses"></table></div>
         <p class="small" style="margin-top:10px"><strong>What students said.</strong> Strengths: knowledgeable, dedicated, supportive faculty; instruction that links theory to practice; hands-on learning; peer study groups. Suggestions: more hands-on clinical and simulation practice and placement options, clearer communication and course organization, and more review sessions, practice tests, and tutoring before exams.</p></div>
     </div>
   </div>
@@ -705,9 +705,24 @@ footer{padding:40px 0 60px;color:var(--muted);font-size:.85rem}
             <button data-enr="rn" aria-pressed="false">RN</button>
           </div>
         </div>
-        <p class="small muted" id="enrNote">Raw counts; a formal retention-rate calculation is still pending.</p>
+        <p class="small muted" id="enrNote">2021–2023 from the NYSED Annual Reports; 2024–2026 from the NYSED program retention data (2026* is a partial year). Retention rates are in the Program retention section below.</p>
         <svg id="enrChart" viewBox="0 0 460 260" role="img" aria-label="Grouped bar chart of new admits, enrollment and graduates by year"></svg>
       </div>
+    </div>
+    <div class="card" id="retention" style="margin-top:20px">
+      <div class="chart-head"><h3>Program retention, 2024–2026</h3><span class="small muted">NYSED program retention data · 2026 is a partial year</span></div>
+      <p class="small muted">Retention rate = (Total enrollment − Withdrawn) ÷ Total enrollment. No AMG retention benchmark has been set yet.</p>
+      <div class="two" style="margin-top:6px;align-items:start">
+        <div><svg id="retChart" viewBox="0 0 460 250" role="img" aria-label="Retention rates: PN 74.36% in 2024, 75.10% in 2025, 79.26% in 2026 (partial year); RN 87.00%, 85.84%, 85.95%"></svg></div>
+        <div class="facts" style="grid-template-columns:repeat(2,minmax(0,1fr))">
+          <div class="fact"><div class="num" style="color:var(--pn)">79.26%</div><div class="small">PN retention, 2026 (partial year): up from 74.36% in 2024</div></div>
+          <div class="fact"><div class="num" style="color:var(--rn)">85.95%</div><div class="small">RN retention, 2026 (partial year): steady at 86–87%</div></div>
+          <div class="fact"><div class="num">636 / 761</div><div class="small">students retained across both programs in 2026 (83.57%)</div></div>
+          <div class="fact"><div class="num">125</div><div class="small">withdrawals in 2026 so far (PN 56, RN 69)</div></div>
+        </div>
+      </div>
+      <details style="margin-top:12px" open><summary class="small" style="cursor:pointer;font-weight:600">Calculation by year</summary><div class="scroller"><table class="asmt" id="retTable"></table></div></details>
+      <p class="small" style="margin-top:10px">PN retention has risen each year, by about 5 points since 2024. RN retention stays higher, at about 86–87%, with little change. Because 2026 is a partial year, its rates may shift once the year closes. These are annual enrollment-based rates; a cohort-based persistence rate and an AMG benchmark are the next steps.</p>
     </div>
     <div class="card" style="margin-top:20px">
       <h3>Academic advising caseload, January–August 2026</h3>
@@ -1354,11 +1369,11 @@ const E = [
   find:'Both programs meet their SPOE targets under the NYSED method. A student-level cross-check from the new Master Roster found much lower completion, especially for LPN (20.2% against 74–76%), a gap too large to explain by method alone. The School reports 2026 rates of PN 76% and RN 82% (October 1, 2026 report) while the two methods are reconciled.',
   act:'Reconcile the NYSED rates with the Master Roster student by student, beginning with LPN, before the next NYSED reporting cycle, and report the reconciled rates and method; continue early identification of at-risk students, advising, tutoring, and attendance follow-up.',
   who:'Registrar; Nursing Administration; Academic Committee; Student Services', follow:'Annually, by cohort.', src:['nysed']},
- {n:4,t:'Student retention',st:'proxy',cat:'Student Outcomes',note:'Raw counts only; no rate calculated',
+ {n:4,t:'Student retention',st:'met',cat:'Student Outcomes',note:'Retention 2026*: PN 79.26% · RN 85.95%',
   bench:'Not yet set. [Insert AMG-approved retention benchmark]',
-  data:'Five years of admits, enrollment, and graduates (NYSED Annual Report Table 1.2). Master Roster, fall 2026–2027: 861 students (756 active, 94 admitted not yet started, 6 awaiting capstone, 4 withdrawn, 1 on leave) in three program versions: RN generic 396, LPN 367, RN bridge 98. 231 graduated in 2025–2026 (LPN 66, RN 113, RN bridge 52). Re-entry log: 19 students re-entered, 16 active. The October 1, 2026 report gives fall 2026 enrollment of 687 (RN 445, PN 242), new admits RN 155 and PN 130, and 322 graduates in the 2025–2026 terms (RN 237, PN 85); these are the School\'s reported totals and differ from the Master Roster counts above.',
-  find:'RN enrollment and graduates rising since 2023; LPN admits and graduates declining since 2022. The RN bridge version is documented for the first time this cycle. A formal retention rate and benchmark are still to be set.',
-  act:'Build a cohort-based retention rate (e.g., fall-to-fall persistence); early-alert process; enhanced advising.',
+  data:'Retention rate = (Total enrollment − Withdrawn) ÷ Total enrollment (NYSED program retention data). PN: 2024 (273 − 70) ÷ 273 = 74.36%; 2025 (245 − 61) ÷ 245 = 75.10%; 2026* (270 − 56) ÷ 270 = 79.26%. RN: 2024 (500 − 65) ÷ 500 = 87.00%; 2025 (353 − 50) ÷ 353 = 85.84%; 2026* (491 − 69) ÷ 491 = 85.95%. *2026 is a partial year. Admits, enrollment, and graduates: NYSED Annual Report Table 1.2 for 2021–2023 and the program retention data for 2024–2026. Master Roster, fall 2026–2027: 861 students (756 active, 94 admitted not yet started, 6 awaiting capstone, 4 withdrawn, 1 on leave) in three program versions: RN generic 396, LPN 367, RN bridge 98. 231 graduated in 2025–2026 (LPN 66, RN 113, RN bridge 52). Re-entry log: 19 students re-entered, 16 active. The October 1, 2026 report gives fall 2026 enrollment of 687 (RN 445, PN 242), new admits RN 155 and PN 130, and 322 graduates in the 2025–2026 terms (RN 237, PN 85); these are the School\'s reported totals and differ from the Master Roster counts above.',
+  find:'Retention is now calculated for three years. PN retention rose each year, from 74.36% (2024) to 75.10% (2025) and 79.26% (2026, partial year). RN retention is higher and stable, at 87.00%, 85.84%, and 85.95%. The RN bridge version is documented for the first time this cycle. An AMG retention benchmark is still to be set.',
+  act:'Adopt an AMG retention benchmark; add a cohort-based persistence rate (e.g., fall-to-fall) beside the annual rate; recalculate 2026 when the year closes; continue early alerts, advising, and tutoring, focusing on PN withdrawals.',
   who:'Academic Committee; Nursing Administration; Faculty; Student Services', follow:'Each semester and annually.', src:['nysed','master']},
  {n:5,t:'Student progression',st:'proxy',cat:'Student Outcomes',note:'SAP: 94.8% meet requirements',
   bench:'Students progress per established academic requirements.', data:'Master Roster, fall 2026–2027: of 518 students with a satisfactory academic progress (SAP) status, 473 (91.3%) are in good standing, 18 (3.5%) on warning, 10 (1.9%) on probation, 10 (1.9%) suspended, 7 (1.4%) dismissed; 491 (94.8%) meet SAP, and none has exceeded the maximum time frame. Attendance, 861 students: mean 1.71% of program hours missed; 7 students (0.8%) missed 20% or more.',
@@ -1479,9 +1494,8 @@ const SURVEY = [
  {g:'Overall satisfaction and persistence',items:[[null,'Students are satisfied with the program overall.',41,58,85.6],[null,'Students would recommend the program.',43,63],[23,'Students intend to continue in the program.',84]]},
 ];
 const ENR = {
- lpn:[[2021,251,64,131],[2022,301,71,150],[2023,145,136,127],[2024,180,136,101],[2025,122,110,80]],
- rn:[[2021,null,null,null],[2022,null,null,null],[2023,null,null,null],[2024,144,190,166],[2025,200,212,183]]
-};
+ lpn:[[2021,251,64,131],[2022,301,71,150],[2023,145,136,127],[2024,104,273,66],[2025,105,245,55],['2026*',98,270,48]],
+ rn:[[2024,73,500,166],[2025,141,353,183],['2026*',126,491,104]] };
 
 /* ---------- NCLEX chart ---------- */
 const NC = {
@@ -1963,7 +1977,7 @@ const SEMN=[
  {id:'ATI',t:['ATI predicted','readiness'],k:'box',x:640,y:320,st:'proxy',d:'ATI\'s predicted probability of passing the NCLEX.',ind:[['976 students in 30 cohorts: 33.6% On Track, 51.7% Needs Improvement, 14.7% At Risk','met'],['Predictions by cohort, not yet by student','proxy'],['Predicted vs actual NCLEX by cohort','gap']]},
  {id:'NC',t:['NCLEX first-time','pass'],k:'box',x:940,y:72,st:'met',d:'Reported outcome.',ind:[['RN 71.07% and PN 85.0% (2025)','met']]},
  {id:'EMP',t:['Employment within','six months'],k:'box',x:940,y:174,st:'proxy',d:'Reported outcome, new this cycle.',ind:[['9 of 17 exit-survey respondents employed in nursing (53%; target 75%)','met'],['Employer survey','gap']]},
- {id:'RET',t:['Retention and','progression'],k:'box',x:940,y:276,st:'proxy',d:'Reported outcome.',ind:[['Admissions, enrollment, graduate counts','met'],['Retention rate and course progression','gap']]},
+ {id:'RET',t:['Retention and','progression'],k:'box',x:940,y:276,st:'proxy',d:'Reported outcome.',ind:[['Retention 2026*: PN 79.26%, RN 85.95%','met'],['Admissions, enrollment, graduate counts','met'],['Course progression','gap']]},
  {id:'COM',t:['Program','completion'],k:'box',x:940,y:378,st:'met',d:'Reported outcome.',ind:[['RN 82%, PN 76% (2026)','met']]},
  {id:'ES',t:['Employer','satisfaction'],k:'box',x:940,y:582,st:'proxy',d:'How employers rate AMG graduates on the program\'s learning outcomes.',ind:[['RN graduates: employers met outcomes 82–92% (SPOE, year not stated)','proxy'],['LPN graduates: employers met outcomes 84–92% (SPOE, year not stated)','proxy'],['Current-year employer survey','gap']]},
  {id:'GS',t:['Graduate','satisfaction'],k:'box',x:940,y:480,st:'met',d:'Reported outcome.',ind:[['LPN exit survey: 3.7 of 5','met'],['RN/PN exit survey: 58.8% satisfied (21.5% response)','met']]},
@@ -2803,7 +2817,7 @@ const SDG_ROWS=[
  {t:'NCLEX-PN first-time pass',v:100,hist:[96,89,96,89.61,85,100],src:'NYBON 2021–2025; NCSBN Jan–Jun 2026',links:{'3.c':'d','4.4':'d','8.5':'s'},next:'Sustain the January–June 2026 result of 100% across full-year results.'},
  {t:'RN program completion',v:86,bench:75,hist:[90,85,87,86],src:'NYSED method (SPOE target 75%); cohort cross-check 57.7%',links:{'4.3':'d','3.c':'s','8.6':'s'},next:'Keep completion at or above 85%.'},
  {t:'LPN program completion',v:74,bench:70,hist:[75,75,76,74],src:'NYSED method (SPOE target 70%); cohort cross-check 20.2%',links:{'4.3':'d','3.c':'s','8.6':'s'},next:'Reconcile the NYSED rate with the Master Roster cohort check (20.2%) student by student, then report the reconciled rate.'},
- {t:'Retention and course progression',v:94.8,src:'Master Roster: 94.8% meet SAP (518 students); course data pending',links:{'4.3':'d','4.5':'s'},next:'Calculate retention and course pass rates from registrar records. Advisor reports show at-risk students rising from 111 to 166.'},
+ {t:'Retention and course progression',v:94.8,src:'Retention 2026 (partial year): PN 79.26%, RN 85.95%; 94.8% meet SAP (518 students); course data pending',links:{'4.3':'d','4.5':'s'},next:'Calculate retention and course pass rates from registrar records. Advisor reports show at-risk students rising from 111 to 166.'},
  {t:'Teaching quality (course evaluations)',v:88.8,src:'1,333 responses, 4.44 of 5',links:{'4.c':'d','4.4':'s'},next:'Keep ratings above 4.00 and coach the 12 below-benchmark sections.'},
  {t:'Faculty qualifications',v:100,src:'All meet the BSN minimum',links:{'4.c':'d','3.c':'s'},next:'Maintain standards and start tracking faculty development hours.'},
  {t:'Advising and student support',v:83.2,prev:54,src:'Student survey, fall 2025 54% → summer 2026 83.2%',links:{'4.5':'d','10.2':'s','4.3':'s'},next:'Keep the advising gains going until they reach 80%.'},
@@ -3404,7 +3418,7 @@ async function buildDeck(withVideo,animate){
     T(s,'What the trend shows',{x:9.3,y:2.05,w:3.2,h:.4,fontFace:DK.head,fontSize:18,bold:true,color:DK.navy});
     bullets(s,['RN fell to 71.07% in 2025, then rose to 76.09% in January–June 2026, still below 80%.','The April 2026 cohort, the first after the review sessions, passed at 94.12% (n = 17).','PN reached 100% (28 of 28), reversing the 2023–2025 decline.','2026 figures cover January–June; full-year results are pending.'],9.3,2.6,3.2,4,12.5)}
   // 4. Elements
-  {const s=content('Evaluation elements','Where the 19 evaluation elements stand','Status follows the Findings Memo: 3 with complete multi-year data, 11 with current-cycle or partial data, 5 with no data yet. NYSED asks for three years of data and analysis for each element.');
+  {const s=content('Evaluation elements','Where the 19 evaluation elements stand',`Status: ${cnt.met} with three or more years of data, ${cnt.proxy} with current-cycle or partial data, ${cnt.gap} with no data yet. NYSED asks for three years of data and analysis for each element.`);
     const cols=[['met','Three or more years of data',DK.met],['proxy','Current-cycle or partial data',DK.prox],['gap','No data yet',DK.gap]],w=(Wd-2*M-.6)/3;
     cols.forEach(([k,l,c],i)=>{const x=M+i*(w+.3),items=E.filter(e=>e.st===k);card(s,x,1.8,w,4.95);
       T(s,String(items.length),{x:x+.3,y:1.95,w:1.2,h:.8,fontFace:DK.head,fontSize:40,bold:true,color:c});T(s,l,{x:x+1.3,y:2.1,w:w-1.5,h:.6,fontSize:14,bold:true,color:DK.ink,valign:'middle'});
@@ -3440,6 +3454,16 @@ async function buildDeck(withVideo,animate){
     s.addChart(pres.charts.LINE,[{name:'RN',labels:['2021','2022','2023','2024','2025','2026'],values:[null,90,85,87,86,82]},{name:'LPN',labels:['2021','2022','2023','2024','2025','2026'],values:[75,75,76,74,75,76]}],Object.assign({},chartBase,{x:M,y:1.75,w:7.2,h:5.05,chartColors:[DK.acc,DK.purp],lineSize:3,lineDataSymbol:'circle',lineDataSymbolSize:8,valAxisMinVal:60,valAxisMaxVal:100,valAxisLabelFormatCode:'0"%"',showValue:true,dataLabelPosition:'t',dataLabelFormatCode:'0"%"',dataLabelFontSize:10,showLegend:true,legendPos:'b',displayBlanksAs:'gap',showTitle:true,title:'Program completion rate'}));
     const x=8.2,w=Wd-M-x;stat(s,x,1.85,w,'53 faculty','43 nursing (all RN + BSN or higher; most graduate-prepared) · 10 gen ed · 19 full-time, 34 part-time');stat(s,x,3.6,w,'1 : 8–10','clinical faculty-to-student ratio (lab 1:15)');
     T(s,'NYSED method: both programs above target (2026: PN 76%, RN 82%). Final-course method, 2025–2026: PN 71.43%, RN 67.07%, both rising each term. A cohort check found lower rates (LPN 20.2%); the methods are being reconciled.',{x,y:5.4,w,h:1.2,fontSize:12,color:DK.muted})}
+  // 9a. Retention
+  {const s=content('Program data','Retention: PN rising each year, RN steady near 86%','Program retention, 2024–2026 (2026 is a partial year). Retention rate = (Total enrollment − Withdrawn) ÷ Total enrollment. PN: 74.36%, 75.10%, 79.26%. RN: 87.00%, 85.84%, 85.95%. No AMG retention benchmark has been set yet.');
+    const R={pn:[['2024',273,70],['2025',245,61],['2026*',270,56]],rn:[['2024',500,65],['2025',353,50],['2026*',491,69]]},rt=r=>Math.round((r[1]-r[2])/r[1]*10000)/100;
+    s.addChart(pres.charts.LINE,[{name:'RN',labels:R.rn.map(r=>r[0]),values:R.rn.map(rt)},{name:'PN',labels:R.pn.map(r=>r[0]),values:R.pn.map(rt)}],Object.assign({},chartBase,{x:M,y:1.75,w:6.3,h:4.9,chartColors:[DK.acc,DK.purp],lineSize:3,lineDataSymbol:'circle',lineDataSymbolSize:8,valAxisMinVal:60,valAxisMaxVal:100,valAxisLabelFormatCode:'0"%"',showValue:true,dataLabelPosition:'t',dataLabelFormatCode:'0.00"%"',dataLabelFontSize:10,showLegend:true,legendPos:'b',showTitle:true,title:'Retention rate by year'}));
+    const x=7.3,w=Wd-M-x;
+    const rows=[[{text:'Program',options:{bold:true}},{text:'Year',options:{bold:true}},{text:'Calculation',options:{bold:true}},{text:'Rate',options:{bold:true}}]];
+    [['PN','pn'],['RN','rn']].forEach(([lab,k])=>R[k].forEach(r=>rows.push([lab,r[0],`(${r[1]} − ${r[2]}) ÷ ${r[1]}`,{text:rt(r).toFixed(2)+'%',options:{bold:true,color:k==='pn'?DK.purp:DK.acc}}])));
+    s.addTable(rows,{x,y:1.85,w,colW:[.9,.8,w-2.9,1.2],fontFace:DK.body,fontSize:11,color:DK.ink,border:{type:'solid',color:'D5DEE6',pt:.75},fill:{color:DK.white},rowH:.34,valign:'middle'});
+    T(s,'PN retention rose about 5 points since 2024; RN stays higher and steady. 2026 is a partial year, and no AMG retention benchmark is set yet.',{x,y:4.45,w,h:.9,fontSize:12.5,color:DK.ink});
+    T(s,'Retention rate = (Total enrollment − Withdrawn) ÷ Total enrollment. Source: NYSED program retention data, 2024–2026.',{x,y:5.45,w,h:.6,fontSize:10,color:DK.muted})}
   // 9b. New evidence this cycle
   {const s=content('New evidence this cycle','Readiness, clinical placements, and staff climate','ATI Predictive Analytics: 976 students in 30 cohorts; 33.6% On Track, 51.7% Needs Improvement, 14.7% At Risk. Clinical placements: 2,867 over Spring 2025–Fall 2026 (2,677 external, 144 at AMG, 46 no site); every site in use is affiliated (19 affiliated sites, all with signed agreements). Simulation: 60 hours per program, 14.8% (PN) and 13.3% (RN) of direct-care hours (12.9% and 11.8% of total clinical hours); cap one-third. Employee Satisfaction Survey (January 2026, n=31): 79.9% agree overall; 69.0% can report concerns without fear of retaliation.');
     const cw=(Wd-2*M-.6)/3,y=1.8,ch=4.95;
@@ -3543,7 +3567,7 @@ async function buildDeck(withVideo,animate){
     bullets(s,['Goal 3: health workforce (target 3.c).','Goal 4: access, skills, and qualified teachers (4.3–4.c).','Gaps: results by student group, climate education, and a formal complaint record.'],x+.25,2.55,w-.5,4,12.5)}
   // 16. Priorities
   {const s=content('Next steps','Priorities for the next cycle','Priorities drawn from the Findings Memo and Comprehensive Plan recommendations.');
-    const P=[['Lift NCLEX-RN to 80%+','76.09% so far in 2026; April 2026 cohort 94.12%; report each graduation cohort until the rate holds at 80% or above.',DK.gap],['Sustain satisfaction','Keep student satisfaction above 80% (85.6% in summer 2026) and raise graduate satisfaction to the same level.',DK.prox],['Retention and completion','Adopt a retention benchmark and cohort rate; reconcile completion methods with student-level cohort tracking.',DK.gap],['Grievance log','Keep the log each semester; route compliance-relevant complaints to the formal procedures; confidential intake.',DK.prox],['NCLEX registration','Audit the graduate-to-board handoff and give advance notice of eligibility changes.',DK.prox],['Simulation and resources','Confirm the simulation approval; acquire NOELLE and Pediatric HAL simulators; renew journals.',DK.acc]];
+    const P=[['Lift NCLEX-RN to 80%+','76.09% so far in 2026; April 2026 cohort 94.12%; report each graduation cohort until the rate holds at 80% or above.',DK.gap],['Sustain satisfaction','Keep student satisfaction above 80% (85.6% in summer 2026) and raise graduate satisfaction to the same level.',DK.prox],['Retention and completion','Retention now calculated (2026: PN 79.3%, RN 86.0%); adopt a benchmark; reconcile completion methods with cohort tracking.',DK.prox],['Grievance log','Keep the log each semester; route compliance-relevant complaints to the formal procedures; confidential intake.',DK.prox],['NCLEX registration','Audit the graduate-to-board handoff and give advance notice of eligibility changes.',DK.prox],['Simulation and resources','Confirm the simulation approval; acquire NOELLE and Pediatric HAL simulators; renew journals.',DK.acc]];
     const w=(Wd-2*M-.6)/3,h=2.35;P.forEach(([t,d,c],i)=>{const x=M+(i%3)*(w+.3),y=1.85+Math.floor(i/3)*(h+.3);card(s,x,y,w,h);
       s.addShape(pres.shapes.OVAL,{x:x+.3,y:y+.3,w:.45,h:.45,fill:{color:c},line:{type:'none'}});T(s,String(i+1),{x:x+.3,y:y+.3,w:.45,h:.45,fontSize:14,bold:true,color:DK.white,align:'center',valign:'middle'});
       T(s,t,{x:x+.9,y:y+.3,w:w-1.15,h:.5,fontFace:DK.head,fontSize:16,bold:true,color:DK.navy,valign:'middle'});T(s,d,{x:x+.3,y:y+.95,w:w-.6,h:h-1.1,fontSize:12.5,color:DK.ink})})}
@@ -3562,7 +3586,7 @@ async function buildDeck(withVideo,animate){
 let deckBusy=false;
 document.getElementById('deckBtn').addEventListener('click',async()=>{
   if(deckBusy)return;deckBusy=true;const b=document.getElementById('deckBtn');b.disabled=true;
-  try{const blob=await buildDeck(document.getElementById('deckVideo').checked,document.getElementById('deckAnim').checked);await saveFile('AMG_School_of_Nursing_2026_Program_Evaluation.pptx',blob);deckMsg('Presentation ready: 23 slides with native charts, high-resolution images, and speaker notes. Figure sources use the '+(window.AMG_CITE?window.AMG_CITE.name():'APA 7th edition')+' style chosen under Cite as.')}
+  try{const blob=await buildDeck(document.getElementById('deckVideo').checked,document.getElementById('deckAnim').checked);await saveFile('AMG_School_of_Nursing_2026_Program_Evaluation.pptx',blob);deckMsg('Presentation ready: 24 slides with native charts, high-resolution images, and speaker notes. Figure sources use the '+(window.AMG_CITE?window.AMG_CITE.name():'APA 7th edition')+' style chosen under Cite as.')}
   catch(e){console.error(e);deckMsg('The presentation could not be built in this browser. Try a current version of Chrome or Edge.')}
   finally{deckBusy=false;b.disabled=false}
 });
@@ -3932,25 +3956,50 @@ function drawEnr(p){
   const data=ENR[p], keys=['Admits','Enrolled','Graduates'], cols=['--accent','--pn','--met'];
   const x0=d3.scaleBand().domain(data.map(d=>d[0])).range([m.l,W-m.r]).padding(.22);
   const x1=d3.scaleBand().domain([0,1,2]).range([0,x0.bandwidth()]).padding(.08);
-  const y=d3.scaleLinear().domain([0,320]).range([H-m.b,m.t]);
+  const y=d3.scaleLinear().domain([0,Math.max(320,Math.ceil(d3.max(data,d=>d3.max([d[1],d[2],d[3]]))/50)*50)]).range([H-m.b,m.t]);
   svg.append('g').attr('transform',`translate(0,${H-m.b})`).call(d3.axisBottom(x0).tickSize(0).tickPadding(8)).call(g=>g.select('.domain').attr('stroke',css('--line')));
   svg.append('g').attr('transform',`translate(${m.l},0)`).call(d3.axisLeft(y).ticks(4).tickSize(0).tickPadding(6)).call(g=>g.select('.domain').remove());
   const g=svg.append('g').selectAll('g').data(data).join('g').attr('transform',d=>`translate(${x0(d[0])},0)`);
-  g.filter(d=>d[1]==null).append('text').attr('x',x0.bandwidth()/2).attr('y',y(0)-10).attr('text-anchor','middle').text('to verify').style('font-size','11px').style('font-style','italic');
   g.selectAll('rect').data(d=>[1,2,3].filter(i=>d[i]!=null).map(i=>({v:d[i],i:i-1,yr:d[0]}))).join('rect')
     .attr('x',d=>x1(d.i)).attr('width',x1.bandwidth()).attr('rx',2).attr('fill',d=>css(cols[d.i]))
     .attr('y',y(0)).attr('height',0)
     .transition().duration(reduce?0:700).delay((d,j)=>reduce?0:j*60).attr('y',d=>y(d.v)).attr('height',d=>y(0)-y(d.v));
-  g.append('title').text(d=>d[1]==null?`${d[0]}: figures being verified`:`${d[0]}: ${d[1]} admits, ${d[2]} enrolled, ${d[3]} graduates`);
+  g.append('title').text(d=>`${d[0]}: ${d[1]} admits, ${d[2]} enrolled, ${d[3]} graduates`);
   const lg=svg.append('g').attr('transform',`translate(${m.l},10)`);
   keys.forEach((k,i)=>{lg.append('rect').attr('x',i*90).attr('y',-8).attr('width',10).attr('height',10).attr('fill',css(cols[i]));lg.append('text').attr('x',i*90+14).attr('y',1).text(k)});
   document.getElementById('enrNote').innerHTML = p==='rn'
-    ? 'RN 2021–2023 figures are marked for verification in the September 25 report; 2024–2025 are confirmed. A formal retention-rate calculation is still pending.'
-    : 'Raw counts; a formal retention-rate calculation is still pending.';
+    ? '2024–2026 from the NYSED program retention data (2026* is a partial year). Retention rates are in the Program retention section below.'
+    : '2021–2023 from the NYSED Annual Reports; 2024–2026 from the NYSED program retention data (2026* is a partial year). Retention rates are in the Program retention section below.';
 }
 document.querySelectorAll('[data-enr]').forEach(b=>b.addEventListener('click',()=>{
   document.querySelectorAll('[data-enr]').forEach(o=>o.setAttribute('aria-pressed',o===b));drawEnr(b.dataset.enr);
 }));
+
+
+/* ---------- retention ---------- */
+const RET={pn:[['2024',104,273,66,70],['2025',105,245,55,61],['2026*',98,270,48,56]],rn:[['2024',73,500,166,65],['2025',141,353,183,50],['2026*',126,491,104,69]]};
+const retRate=r=>Math.round((r[2]-r[4])/r[2]*10000)/100;
+function drawRet(){
+  const svg=d3.select('#retChart');if(svg.empty())return;svg.selectAll('*').remove();
+  const W=460,H=250,m={t:20,r:52,b:30,l:44};
+  const yrs=RET.pn.map(r=>r[0]);
+  const x=d3.scalePoint().domain(yrs).range([m.l,W-m.r]).padding(.35);
+  const y=d3.scaleLinear().domain([60,100]).range([H-m.b,m.t]);
+  svg.append('g').attr('transform',`translate(0,${H-m.b})`).call(d3.axisBottom(x).tickSize(0).tickPadding(8)).call(g=>g.select('.domain').attr('stroke',css('--line')));
+  svg.append('g').attr('transform',`translate(${m.l},0)`).call(d3.axisLeft(y).ticks(4).tickFormat(d=>d+'%').tickSize(0).tickPadding(6)).call(g=>g.select('.domain').remove());
+  y.ticks(4).forEach(t=>svg.append('line').attr('x1',m.l).attr('x2',W-m.r).attr('y1',y(t)).attr('y2',y(t)).attr('stroke',css('--grid')));
+  [['pn','PN','--pn'],['rn','RN','--rn']].forEach(([k,lab,c])=>{
+    const pts=RET[k].map(r=>[r[0],retRate(r)]);
+    const path=svg.append('path').datum(pts).attr('fill','none').attr('stroke',css(c)).attr('stroke-width',3).attr('d',d3.line().x(d=>x(d[0])).y(d=>y(d[1])));
+    if(!reduce){const L=path.node().getTotalLength();path.attr('stroke-dasharray',L).attr('stroke-dashoffset',L).transition().duration(900).attr('stroke-dashoffset',0)}
+    svg.append('g').selectAll('circle').data(pts).join('circle').attr('cx',d=>x(d[0])).attr('cy',d=>y(d[1])).attr('r',4.5).attr('fill',css(c)).append('title').text(d=>`${lab} ${d[0]}: ${d[1].toFixed(2)}%`);
+    svg.append('g').selectAll('text').data(pts).join('text').attr('x',d=>x(d[0])).attr('y',d=>y(d[1])+(k==='rn'?-10:18)).attr('text-anchor','middle').style('font-size','11px').style('fill',css(c)).text(d=>d[1].toFixed(2)+'%');
+    const l=pts[pts.length-1];svg.append('text').attr('x',x(l[0])+12).attr('y',y(l[1])+4).style('font-size','12px').style('font-weight',700).style('fill',css(c)).text(lab);
+  });
+  const t=document.getElementById('retTable');
+  if(t)t.innerHTML='<thead><tr><th>Program</th><th>Year</th><th>New admits</th><th>Total enrollment</th><th>Total graduates</th><th>Withdrawn</th><th>Retained</th><th>Calculation</th><th>Retention rate</th></tr></thead><tbody>'+
+    [['PN','pn'],['RN','rn']].map(([lab,k])=>RET[k].map(r=>`<tr><td>${lab}</td><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td><td>${r[3]}</td><td>${r[4]}</td><td>${r[2]-r[4]}</td><td>(${r[2]} − ${r[4]}) ÷ ${r[2]} = ${r[2]-r[4]} ÷ ${r[2]}</td><td><strong>${retRate(r).toFixed(2)}%</strong></td></tr>`).join('')).join('')+'</tbody>';
+}
 
 /* ---------- CQI + timeline ---------- */
 const CQI=[['Data collection','done','2023–2025 results verified'],['Analysis','done','ATI, predictor, remediation reviewed'],['Findings','done','Below 80% in 2025'],['Action plan','done','Problem-focused trigger'],['Implementation','now','Review sessions from Summer 2026'],['Follow-up','','Quarterly monitoring'],['Evaluation','','Needs 2026 official results']];
@@ -3999,7 +4048,7 @@ try{if(localStorage.getItem('amgLook')==='dark')setLook('dark')}catch(e){}
 function drawAll(){
   if(!nCounted){nCounted=true;nCountUp()}drawImpact();initSound();initSdg();initWellbeing();
   const prog=document.querySelector('[data-prog][aria-pressed="true"]').dataset.prog;
-  drawNclex(prog);drawFlow();drawComp();drawBelow();drawAdv();drawEmp();drawSS();drawNew25();drawMission();drawFall();drawSLO();drawModels();drawEnr(document.querySelector('[data-enr][aria-pressed="true"]').dataset.enr);
+  drawNclex(prog);drawFlow();drawComp();drawBelow();drawAdv();drawEmp();drawSS();drawNew25();drawMission();drawFall();drawSLO();drawModels();drawEnr(document.querySelector('[data-enr][aria-pressed="true"]').dataset.enr);drawRet();
 }
 renderTally();renderTiles();renderBars('q');calc();
 let ROLE='pending';
@@ -4014,7 +4063,7 @@ function setRole(r){
   try{const u=await window.claude.use('user');setRole(u&&await u.canEdit()?'admin':'viewer')}catch(e){setRole('viewer')}
 })();
 if(window.d3){drawAll();window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change',drawAll);}
-else{document.querySelectorAll('#nclexChart,#flow,#compChart,#enrChart,#belowChart,#advChart,#empChart,#ssChart,#regChart,#bayesChart,#forest,#mcChart,#semChart,#atiScatter,#atiCal,#impChart,#impContrib').forEach(s=>s.outerHTML='<p class="small muted">Charts need the D3 library, which did not load. Reload the page to try again.</p>')}
+else{document.querySelectorAll('#nclexChart,#flow,#compChart,#enrChart,#retChart,#belowChart,#advChart,#empChart,#ssChart,#regChart,#bayesChart,#forest,#mcChart,#semChart,#atiScatter,#atiCal,#impChart,#impContrib').forEach(s=>s.outerHTML='<p class="small muted">Charts need the D3 library, which did not load. Reload the page to try again.</p>')}
 </script>
 </body>
 </html>
